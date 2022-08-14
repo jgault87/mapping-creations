@@ -1,5 +1,4 @@
 const creationData = [
-  
   {
     name: 'Autumn and Murphy in Space',
     description:
@@ -61,7 +60,9 @@ function cardTemplate(creation) {
   return `
       <div class="card">
       <img class="pet-photo" src="${creation.photo}">
-      <h2 class="pet-name">${creation.name} <span class="species"> <br>input:<br>(${
+      <h2 class="pet-name">${
+        creation.name
+      } <span class="species"> <br>input:<br>(${
     creation.description
   })</span></h2>
       
@@ -71,15 +72,17 @@ function cardTemplate(creation) {
 }
 
 document.getElementById('app').innerHTML = `
-    <h1 class="app-title">AI Photo Creations (${creationData.length} results)</h1>
+    <h1 class="app-title">AI Photo Creations (${
+      creationData.length
+    } results)</h1>
     ${creationData.map(cardTemplate).join('')}
     <p class="footer">These ${
       creationData.length
     } creations were added recently. They were created using openAI's DALL-E.</p>
   `;
 
-  // creationData.forEach((creation, i) => {
-  // creation.id = i; 
-  // console.log(creation);
+// creationData.forEach((creation, i) => {
+// creation.id = i;
+// console.log(creation);
 
-  // })
+// })
