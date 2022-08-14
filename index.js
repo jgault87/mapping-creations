@@ -57,15 +57,15 @@ function foods(foods) {
   `;
 }
 
-function cardTemplate(pet) {
+function cardTemplate(creation) {
   return `
-      <div class="animal">
-      <img class="pet-photo" src="${pet.photo}">
-      <h2 class="pet-name">${pet.name} <span class="species"> <br>input:<br>(${
-    pet.description
+      <div class="card">
+      <img class="pet-photo" src="${creation.photo}">
+      <h2 class="pet-name">${creation.name} <span class="species"> <br>input:<br>(${
+    creation.description
   })</span></h2>
       
-      ${pet.favFoods ? foods(pet.favFoods) : ''}
+      ${creation.favFoods ? foods(creation.favFoods) : ''}
       </div>
     `;
 }
@@ -77,3 +77,9 @@ document.getElementById('app').innerHTML = `
       creationData.length
     } creations were added recently. They were created using openAI's DALL-E.</p>
   `;
+
+  // creationData.forEach((creation, i) => {
+  // creation.id = i; 
+  // console.log(creation);
+
+  // })
